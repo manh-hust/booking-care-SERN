@@ -12,8 +12,19 @@ app.use(bodyParser.urlencoded({
     extended: true
 }))
 
+app.use(express.json());
+
 viewEngine(app)
 initWebRoutes(app)
+
+app.get("/test", (req, res) => {
+    console.log(req.route)
+    console.log(req.originalUrl)
+    console.log(req.path)
+    res.send('Test Page')
+})
+
+app.locals.name = "DD Manh"
 
 let port = process.env.PORT || 8080
 
