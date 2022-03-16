@@ -1,7 +1,14 @@
+import db from '../models/index'
+
 class HomeController {
-    getHomePage(req, res) {
+    // GET /
+    async getHomePage(req, res) {
+        const data = await db.User.findAll({
+            raw: true
+        })
         res.render('home.ejs', {
-            message: "Home nha"
+            message: "Home nha",
+            data: data
         })
     }
 }
