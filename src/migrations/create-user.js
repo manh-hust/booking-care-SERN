@@ -11,6 +11,9 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
+      password: {
+        type: Sequelize.STRING
+      },
       firstName: {
         type: Sequelize.STRING
       },
@@ -23,7 +26,10 @@ module.exports = {
       gender: {
         type: Sequelize.BOOLEAN
       },
-      roleId: {
+      keyRole: {
+        type: Sequelize.STRING
+      },
+      typeRole: {
         type: Sequelize.STRING
       },
       createdAt: {
