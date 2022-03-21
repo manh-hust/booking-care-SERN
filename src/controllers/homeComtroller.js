@@ -6,9 +6,8 @@ class HomeController {
         const data = await db.User.findAll({
             raw: true
         })
-        res.render('home.ejs', {
-            message: "Home nha",
-            data: data
+        res.send({
+            data
         })
     }
 }
